@@ -2,7 +2,7 @@ PYTHON := venv/bin/python
 SRC := src
 BUILD := build 
 
-.PHONY all build run clean  
+.PHONY: all build run clean  
 
 # Default target 
 all: build run
@@ -11,7 +11,7 @@ all: build run
 build:
 	@mkdir -p $(BUILD)
 	@$(PYTHON) -m compileall -q -b $(SRC)
-	$find $(SRC) -name "*.pyc" -exec cp {} $(BUILD) /\;
+	$find $(SRC) -name "*.pyc" -exec cp {} $(BUILD)/ \;
 
 # running main.py (the make default)
 run:
